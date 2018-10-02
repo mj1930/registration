@@ -1,40 +1,48 @@
-<div class="container">
-  <div class="row">
-    <form class="form-group" [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
-      <div class="col-sm-12">
-          <label for="name" class="col-sm-2 control-label">Name*</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" formControlName="name" id="name"  placeholder="Your Name"/>
+<div class="main">
+  <!-- Sign up form -->
+  <section class="signup">
+      <div class="container">
+          <div class="signup-content">
+              <div class="signup-form">
+                  <h2 class="form-title">Registration Form</h2>
+                  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+                      <div class="form-group">
+                          <label for="name"><i class="fas fa-user"></i></label>
+                          <input type="text" name="name" id="name" formControlName="name" placeholder="Your Name"/>
+                      </div>
+                      <div class="form-group">
+                          <label for="email"><i class="fas fa-envelope-square"></i></label>
+                          <input type="email" name="email" id="email" formControlName="email" placeholder="Your Email"/>
+                      </div>
+                      <div class="form-group">
+                          <label for="contact_phone"><i class="fas fa-phone-square"></i></label>
+                          <input type="text" name="contact_phone" id="contact_phone" formControlName="number" placeholder="Contact Number"/>
+                      </div>
+                      <div class="form-group">
+                        <label for="course_name"><i class="fas fa-graduation-cap"></i></label>
+                        <input type="text" name="course_name" id="course_name" formControlName="course_name" placeholder="Course Name"/>
+                      </div>
+                      <div class="form-group">
+                        <label for="branch_name"><i class="fas fa-user-graduate"></i></label>
+                        <input type="text" name="branch_name" id="branch_name" formControlName="branch_name" placeholder="Course Branch"/>
+                      </div>
+                      <div class="form-group">
+                        <label for="date_range"><i class="fas fa-calendar-alt"></i></label>
+                        <input type="text" name="date_range" id="date_range" formControlName="course_year" placeholder="Course Year"/>
+                      </div>
+                      <div class="form-group">
+                        <label for="school"><i class="fas fa-school"></i></label>
+                        <input type="text" name="school" id="school" formControlName="college_name" placeholder="College Name"/>
+                      </div>
+                      <div class="form-group form-button">
+                          <input type="submit" name="signup" id="signup" class="form-submit" [disabled]="!registerForm.valid" value="Register"/>
+                      </div>
+                  </form>
+              </div>
+              <div class="signup-image">
+                  <figure><img src="../../assets/images/signup-image.jpg" alt="sing up image"></figure>
+              </div>
           </div>
       </div>
-      <div class="col-sm-12">
-          <label for="number" class="col-sm-2 control-label">Contact Number*</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" id="number" formControlName="number" placeholder="Contact number"/>
-          </div>
-      </div>
-      <div class="col-sm-12">
-          <label for="email" class="col-sm-2 control-label">Email Id*</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email id"/>
-          </div>
-      </div>
-      <div class="col-sm-12">
-          <label for="course" class="col-sm-2 control-label">Course*</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="course" formControlName="course" placeholder="Your course"/>
-          </div>
-      </div>
-      <div class="col-sm-12">
-          <label for="year" class="col-sm-2 control-label">Course Year*</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="year" formControlName="year" placeholder="Your course year"/>
-          </div>
-      </div>
-
-      <div class="form-group col-sm-12">
-        <button type="submit" class="col-sm-10 btn btn-primary btn-lg btn-block login-button">Register</button>
-      </div>
-    </form>
-  </div>
+  </section>
 </div>

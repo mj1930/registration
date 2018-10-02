@@ -19,18 +19,24 @@ export class RegistrationComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
       number: ['', Validators.compose([Validators.required])],
-      course: ['', Validators.compose([Validators.required])],
+      course_name: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.required])],
-      year: ['', Validators.compose([Validators.required])]
+      year: ['', Validators.compose([Validators.required])],
+      branch_name: ['', Validators.compose([Validators.required])],
+      course_year: ['', Validators.compose([Validators.required])],
+      college_name: ['', Validators.compose([Validators.required])]
     });
   }
 
   register(data) {
-    this.registerService = this.service.register(data).then((res: any) => {
-      if (res.status === 200) {
-        console.log('form saved');
-      }
-    })
+    if (!data) {
+      alert('Please fill all details');
+    }
+    // this.registerService = this.service.register(data).then((res: any) => {
+    //   if (res.status === 200) {
+    //     console.log('form saved');
+    //   }
+    // })
   }
 
 }
