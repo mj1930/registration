@@ -21,7 +21,6 @@ export class RegistrationComponent implements OnInit {
       number: ['', Validators.compose([Validators.required])],
       course_name: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.required])],
-      year: ['', Validators.compose([Validators.required])],
       branch_name: ['', Validators.compose([Validators.required])],
       course_year: ['', Validators.compose([Validators.required])],
       college_name: ['', Validators.compose([Validators.required])]
@@ -29,14 +28,17 @@ export class RegistrationComponent implements OnInit {
   }
 
   register(data) {
-    if (!data) {
+    if (!this.registerForm.valid) {
       alert('Please fill all details');
     }
-    // this.registerService = this.service.register(data).then((res: any) => {
-    //   if (res.status === 200) {
-    //     console.log('form saved');
-    //   }
-    // })
+
+    this.registerService = this.service.register(data).then((res: any) => {
+      if (res.status === 200) {
+        console.log('form saved');
+      } else if (res.status === 202) {
+        console.log('user exists')
+      }
+    })
   }
 
 }
