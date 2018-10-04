@@ -164,17 +164,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routing", function() { return routing; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _app_registration_registration_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app/registration/registration.component */ "./src/app/registration/registration.component.ts");
-/* harmony import */ var _app_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
-
 
 
 var appRoutes = [
+    // {
+    //     path: '',
+    //     component: HomepageComponent
+    // },
     {
         path: '',
-        component: _app_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_2__["HomepageComponent"]
-    },
-    {
-        path: 'register',
         component: _app_registration_registration_component__WEBPACK_IMPORTED_MODULE_1__["RegistrationComponent"]
     }
 ];
@@ -316,10 +314,10 @@ var RegistrationComponent = /** @class */ (function () {
         }
         this.registerService = this.service.register(data).then(function (res) {
             if (res.status === 200) {
-                console.log('form saved');
+                alert('data saved');
             }
             else if (res.status === 202) {
-                console.log('user exists');
+                alert('user already registerd');
             }
         });
     };
@@ -406,7 +404,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     config: {
-        BASE_URL: 'http://localhost:3000/'
+        BASE_URL: 'http://13.233.78.91:3000/'
     }
 };
 /*

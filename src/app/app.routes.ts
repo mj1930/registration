@@ -8,12 +8,12 @@ import { RegistrationComponent } from '../app/registration/registration.componen
 import { HomepageComponent } from '../app/homepage/homepage.component';
 
 export const appRoutes: Routes = [
+    // {
+    //     path: '',
+    //     component: HomepageComponent
+    // },
     {
         path: '',
-        component: HomepageComponent
-    },
-    {
-        path: 'register',
         component: RegistrationComponent
     }
 ]
