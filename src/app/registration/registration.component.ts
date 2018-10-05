@@ -34,7 +34,7 @@ export class RegistrationComponent implements OnInit {
 
     this.registerService = this.service.register(data).then((res: any) => {
       if (res.status === 200) {
-        alert('data saved');
+        alert('Registered succuesfully');
       } else if (res.status === 202) {
         alert('user already registerd');
       }
